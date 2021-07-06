@@ -8,23 +8,23 @@ float ystep = 20;
 float lastx = -999;
 float lasty = -999;
 float y = 50;
-int ysub = 10;
 float strokeweight = 1;
 float wstep = 0.1;
 int wmax = 10;
+float rand = 0.5;
 
 stroke(20, 50, 70);
 
 for (float x=20; x<=480; x+=xstep) {
-  ystep = random(20) - ysub;
-  if (y - ystep <= height - ysub) {
-    y += ystep;
-  } else if (y + ystep >= height - ysub) {
-    y -= ystep;
+
+  rand = random(0.8);
+  ystep = rand + 0.6;
+  if (y * ystep > height) {
+    y /= ystep;
   } else {
-    y += ystep;
+    y *= ystep;
   }
-  wstep = random(0.9) + 0.6;
+  wstep = rand + 0.6;
   if (strokeweight * wstep > wmax) {
     strokeweight /= wstep;
   } else {
