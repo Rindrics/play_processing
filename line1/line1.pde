@@ -3,7 +3,7 @@ background(255);
 strokeWeight(5);
 smooth();
 
-float xstep = 1;
+float xstep = 3;
 float ystep = 20;
 float lastx = -999;
 float lasty = -999;
