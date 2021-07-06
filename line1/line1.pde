@@ -8,14 +8,15 @@ float ystep = 20;
 float lastx = -999;
 float lasty = -999;
 float y = 50;
+int ysub = 10;
 
 stroke(20, 50, 70);
 
 for (float x=20; x<=480; x+=xstep) {
-  ystep = random(20) - 10;
-  if (y - ystep <= 2) {
+  ystep = random(20) - ysub;
+  if (y - ystep <= height - ysub) {
     y += ystep;
-  } else if (y + ystep >= 198) {
+  } else if (y + ystep >= height - ysub) {
     y -= ystep;
   } else {
     y += ystep;
