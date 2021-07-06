@@ -1,4 +1,4 @@
-size(500, 200);
+size(500, 50);
 background(255);
 strokeWeight(5);
 smooth();
@@ -17,14 +17,14 @@ stroke(20, 50, 70);
 
 for (float x=20; x<=480; x+=xstep) {
 
-  rand = random(0.8);
-  ystep = rand + 0.6;
+  rand = random(0.5);
+  ystep = rand + 0.75;
   if (y * ystep > height) {
     y /= ystep;
   } else {
     y *= ystep;
   }
-  wstep = rand + 0.6;
+  wstep = rand + 0.75;
   if (strokeweight * wstep > wmax) {
     strokeweight /= wstep;
   } else {
