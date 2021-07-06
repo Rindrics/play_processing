@@ -11,6 +11,7 @@ float y = 50;
 int ysub = 10;
 float strokeweight = 1;
 float wstep = 0.1;
+int wmax = 10;
 
 stroke(20, 50, 70);
 
@@ -23,11 +24,11 @@ for (float x=20; x<=480; x+=xstep) {
   } else {
     y += ystep;
   }
-  wstep = random(0.01);
-  if (strokeweight - wstep <= 0) {
-    strokeweight += wstep;
+  wstep = random(0.9) + 0.6;
+  if (strokeweight * wstep > wmax) {
+    strokeweight /= wstep;
   } else {
-    strokeweight -= wstep;
+    strokeweight *= wstep;
   }
   strokeWeight(strokeweight);
   if (lastx > -999) {
