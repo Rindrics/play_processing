@@ -17,8 +17,8 @@ float lasty = -999;
 int centrifuge = 0;
 for (float ang = 0; ang <= 360; ang += 3) {
   float rad = radians(ang);
-  x = centx + (radius * cos(rad)) - centrifuge;
-  y = centy + (radius * sin(rad)) - centrifuge;
+  x = centx + ((radius - centrifuge) * cos(rad));
+  y = centy + ((radius - centrifuge) * sin(rad));
   point(x, y);
   centrifuge -= 1;
 }
