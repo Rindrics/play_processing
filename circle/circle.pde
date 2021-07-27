@@ -14,11 +14,11 @@ stroke(20, 50, 70);
 float x, y;
 float lastx = -999;
 float lasty = -999;
-int centrifuge = 0;
+float centrifuge = 0;
 for (float ang = 0; ang <= 360; ang += 3) {
   float rad = radians(ang);
   x = centx + ((radius - centrifuge) * cos(rad));
   y = centy + ((radius - centrifuge) * sin(rad));
   point(x, y);
-  centrifuge += 1;
+  centrifuge += 0.3;
 }
