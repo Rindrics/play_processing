@@ -15,10 +15,16 @@ float x, y;
 float lastx = -999;
 float lasty = -999;
 float centrifuge = 0;
+float offset = 0;
 for (float ang = 0; ang <= 360 * 5; ang += 1) {
   float rad = radians(ang);
-  x = centx + ((centrifuge + random(15)) * cos(rad));
-  y = centy + ((centrifuge + random(15)) * sin(rad));
+  if (ang % 2 == 0) {
+    offset = 0;
+  } else {
+    offset = random(15);
+  }
+  x = centx + ((centrifuge + offset) * cos(rad));
+  y = centy + ((centrifuge + offset) * sin(rad));
   point(x, y);
   centrifuge += 0.1;
 }
