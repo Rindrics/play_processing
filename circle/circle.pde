@@ -14,17 +14,17 @@ stroke(20, 50, 70);
 float x, y;
 float lastx = -999;
 float lasty = -999;
-float centrifuge = 0;
-float offset = 0;
-for (float ang = 0; ang <= 360 * 5; ang += 1) {
+float radiusNoise = random(10);
+for (float ang = 0; ang <= 360 * 5; ang += 5) {
+  radiusNoise += 0.05;
+  radius += 0.5;
+  float thisRadius = radius + (noise(radiusNoise) * 200) - 100;
   float rad = radians(ang);
-  if (ang % 2 == 0) {
-    offset = 0;
-  } else {
-    offset = random(15);
+  x = centx + (thisRadius * cos(rad));
+  y = centy + (thisRadius * sin(rad));
+  if (lastx > -999) {
+    line(x, y, lastx, lasty);
   }
-  x = centx + ((centrifuge + offset) * cos(rad));
-  y = centy + ((centrifuge + offset) * sin(rad));
-  point(x, y);
-  centrifuge += 0.1;
+  lastx = x;
+  lasty = y;
 }
