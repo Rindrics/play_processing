@@ -20,5 +20,5 @@ for (float ang = 0; ang <= 360; ang += 3) {
   x = centx + ((radius - centrifuge) * cos(rad));
   y = centy + ((radius - centrifuge) * sin(rad));
   point(x, y);
-  centrifuge -= 1;
+  centrifuge += 1;
 }
