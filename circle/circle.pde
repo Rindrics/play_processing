@@ -15,7 +15,7 @@ float x, y;
 float lastx = -999;
 float lasty = -999;
 float centrifuge = 0;
-for (float ang = 0; ang <= 360; ang += 3) {
+for (float ang = 0; ang <= 360 * 5; ang += 3) {
   float rad = radians(ang);
   x = centx + ((radius - centrifuge) * cos(rad));
   y = centy + ((radius - centrifuge) * sin(rad));
