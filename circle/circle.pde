@@ -15,7 +15,7 @@ for (int i = 0; i < 100; i++) {
     float radius = 10;
     stroke(random(20), random(50), random(70), 80);
     int endangle = 1440 + int(random(1440));
-    for (float ang = 0; ang <= endangle; ang += 5) {
+    for (float ang = 0; ang <= endangle; ang += 1) {
     radiusNoise += 0.05;
     radius += 0.5;
     float thisRadius = radius + (noise(radiusNoise) * 200) - 100;
