@@ -10,6 +10,7 @@ int centy = 150;
 stroke(0, 30);
 ellipse(centx, centy, radius*2, radius*2);
 
+strokeWeight(0.5);
 stroke(20, 50, 70);
 float x, y;
 float lastx = -999;
