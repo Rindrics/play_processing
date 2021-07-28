@@ -6,10 +6,10 @@ smooth();
 int centx = 250;
 int centy = 150;
 
-strokeWeight(0.5);
+strokeWeight(0.1);
 stroke(20, 50, 70);
 float x, y;
-for (int i = 0; i < 100; i++) {
+for (int i = 0; i < 500; i++) {
     float lastx = -999;
     float lasty = -999;
     float radiusNoise = random(10);
